@@ -47,7 +47,8 @@ const InputWord = () => {
     }, [dataReceived]);
 
     return (
-        <div>
+        <div className='container'>
+            <div>
             <input
                 placeholder='Search'
                 id='input'
@@ -56,6 +57,8 @@ const InputWord = () => {
                 style={{ borderColor: inputError ? 'red' : '' }}
             />
             <button onClick={handleSearch}>Search</button>
+            </div>
+            <br/>
 
             {loading && <p>Loading...</p>}
 
@@ -66,7 +69,12 @@ const InputWord = () => {
                     <div key={i}>
                         <h3> <span>{def.meanings[0].partOfSpeech}</span></h3>
                         {def.meanings[0].definitions.map((definition, j) => (
+                          
+                            
                             <div className='definition' key={j}>{definition.definition}</div>
+
+                            
+                             
                         ))}
                     </div>
                 ))
